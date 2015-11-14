@@ -1,0 +1,392 @@
+fileFormatVersion: 2
+guid: 08efd9f9f9414794cac0817a549b2b95
+timeCreated: 1447523581
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: glava
+    100004: //RootNode
+    100006: noga1_1_L_
+    100008: noga1_1_R
+    100010: noga1_L
+    100012: noga1_R
+    100014: noga2_2_L
+    100016: noga2_2_R
+    100018: noga2_L
+    100020: noga2_R
+    100022: noga3_3_L
+    100024: noga3_3_R
+    100026: noga3_L
+    100028: noga3_R
+    100030: Plane_001
+    100032: prsa1
+    100034: prsa2
+    100036: rep
+    100038: root
+    100040: vrat
+    400000: Armature
+    400002: glava
+    400004: //RootNode
+    400006: noga1_1_L_
+    400008: noga1_1_R
+    400010: noga1_L
+    400012: noga1_R
+    400014: noga2_2_L
+    400016: noga2_2_R
+    400018: noga2_L
+    400020: noga2_R
+    400022: noga3_3_L
+    400024: noga3_3_R
+    400026: noga3_L
+    400028: noga3_R
+    400030: Plane_001
+    400032: prsa1
+    400034: prsa2
+    400036: rep
+    400038: root
+    400040: vrat
+    4300000: Plane_001
+    7400000: Default Take
+    7400002: Move
+    7400004: Heal
+    7400006: Death
+    9500000: //RootNode
+    13700000: Plane_001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: -1
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/root
+        weight: 1
+      - path: Armature/root/noga1_L
+        weight: 1
+      - path: Armature/root/noga1_L/noga1_1_L_
+        weight: 1
+      - path: Armature/root/noga1_R
+        weight: 1
+      - path: Armature/root/noga1_R/noga1_1_R
+        weight: 1
+      - path: Armature/root/noga2_L
+        weight: 1
+      - path: Armature/root/noga2_L/noga2_2_L
+        weight: 1
+      - path: Armature/root/noga2_R
+        weight: 1
+      - path: Armature/root/noga2_R/noga2_2_R
+        weight: 1
+      - path: Armature/root/noga3_L
+        weight: 1
+      - path: Armature/root/noga3_L/noga3_3_L
+        weight: 1
+      - path: Armature/root/noga3_R
+        weight: 1
+      - path: Armature/root/noga3_R/noga3_3_R
+        weight: 1
+      - path: Armature/root/prsa1
+        weight: 1
+      - path: Armature/root/prsa1/prsa2
+        weight: 1
+      - path: Armature/root/prsa1/prsa2/vrat
+        weight: 1
+      - path: Armature/root/prsa1/prsa2/vrat/glava
+        weight: 1
+      - path: Armature/root/rep
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Heal
+      takeName: ArmatureAction
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/root
+        weight: 1
+      - path: Armature/root/noga1_L
+        weight: 1
+      - path: Armature/root/noga1_L/noga1_1_L_
+        weight: 1
+      - path: Armature/root/noga1_R
+        weight: 1
+      - path: Armature/root/noga1_R/noga1_1_R
+        weight: 1
+      - path: Armature/root/noga2_L
+        weight: 1
+      - path: Armature/root/noga2_L/noga2_2_L
+        weight: 1
+      - path: Armature/root/noga2_R
+        weight: 1
+      - path: Armature/root/noga2_R/noga2_2_R
+        weight: 1
+      - path: Armature/root/noga3_L
+        weight: 1
+      - path: Armature/root/noga3_L/noga3_3_L
+        weight: 1
+      - path: Armature/root/noga3_R
+        weight: 1
+      - path: Armature/root/noga3_R/noga3_3_R
+        weight: 1
+      - path: Armature/root/prsa1
+        weight: 1
+      - path: Armature/root/prsa1/prsa2
+        weight: 1
+      - path: Armature/root/prsa1/prsa2/vrat
+        weight: 1
+      - path: Armature/root/prsa1/prsa2/vrat/glava
+        weight: 1
+      - path: Armature/root/rep
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Move
+      takeName: ArmatureAction
+      firstFrame: 35
+      lastFrame: 55
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/root
+        weight: 1
+      - path: Armature/root/noga1_L
+        weight: 1
+      - path: Armature/root/noga1_L/noga1_1_L_
+        weight: 1
+      - path: Armature/root/noga1_R
+        weight: 1
+      - path: Armature/root/noga1_R/noga1_1_R
+        weight: 1
+      - path: Armature/root/noga2_L
+        weight: 1
+      - path: Armature/root/noga2_L/noga2_2_L
+        weight: 1
+      - path: Armature/root/noga2_R
+        weight: 1
+      - path: Armature/root/noga2_R/noga2_2_R
+        weight: 1
+      - path: Armature/root/noga3_L
+        weight: 1
+      - path: Armature/root/noga3_L/noga3_3_L
+        weight: 1
+      - path: Armature/root/noga3_R
+        weight: 1
+      - path: Armature/root/noga3_R/noga3_3_R
+        weight: 1
+      - path: Armature/root/prsa1
+        weight: 1
+      - path: Armature/root/prsa1/prsa2
+        weight: 1
+      - path: Armature/root/prsa1/prsa2/vrat
+        weight: 1
+      - path: Armature/root/prsa1/prsa2/vrat/glava
+        weight: 1
+      - path: Armature/root/rep
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Death
+      takeName: ArmatureAction
+      firstFrame: 60
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/root
+        weight: 1
+      - path: Armature/root/noga1_L
+        weight: 1
+      - path: Armature/root/noga1_L/noga1_1_L_
+        weight: 1
+      - path: Armature/root/noga1_R
+        weight: 1
+      - path: Armature/root/noga1_R/noga1_1_R
+        weight: 1
+      - path: Armature/root/noga2_L
+        weight: 1
+      - path: Armature/root/noga2_L/noga2_2_L
+        weight: 1
+      - path: Armature/root/noga2_R
+        weight: 1
+      - path: Armature/root/noga2_R/noga2_2_R
+        weight: 1
+      - path: Armature/root/noga3_L
+        weight: 1
+      - path: Armature/root/noga3_L/noga3_3_L
+        weight: 1
+      - path: Armature/root/noga3_R
+        weight: 1
+      - path: Armature/root/noga3_R/noga3_3_R
+        weight: 1
+      - path: Armature/root/prsa1
+        weight: 1
+      - path: Armature/root/prsa1/prsa2
+        weight: 1
+      - path: Armature/root/prsa1/prsa2/vrat
+        weight: 1
+      - path: Armature/root/prsa1/prsa2/vrat/glava
+        weight: 1
+      - path: Armature/root/rep
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
