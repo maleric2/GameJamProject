@@ -51,7 +51,7 @@ public class BulletExplosion : MonoBehaviour {
         // Once the particles have finished, destroy the gameobject they are on.
         Destroy(explosionParticles.gameObject, explosionParticles.duration);
 
-        Destroy(gameObject, explosionAudio.clip.length);
+        Destroy(gameObject);
     }
 
 
