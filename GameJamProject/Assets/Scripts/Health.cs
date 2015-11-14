@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
 
     private Vector3 respawnPosition;
     private Quaternion respawnRotation;
-
+    private Animator animator;
 
     // Use this for initialization
     void Start()
@@ -37,6 +37,10 @@ public class Health : MonoBehaviour
         }
 
         gameManager = GameObject.FindObjectOfType<GameManager>();
+
+
+        if (gameObject.GetComponent<Animator>() != null)
+            animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -61,6 +65,7 @@ public class Health : MonoBehaviour
             { // here is where you do stuff once ALL lives are gone)
                 isAlive = false;
 
+                ApplyAnimations();
                 switch (onLivesGone)
                 {
                     case deathAction.loadLevelWhenDead:
@@ -73,6 +78,7 @@ public class Health : MonoBehaviour
                 Destroy(gameObject);
                 //if (this.tag == "Target") gameManager.TakeDownTarget();
             }
+
         }
     }
 
@@ -95,5 +101,13 @@ public class Health : MonoBehaviour
     {
         respawnPosition = newRespawnPosition;
         respawnRotation = newRespawnRotation;
+    }
+
+    private void ApplyAnimations()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("Dead", !isAlive);
+        }
     }
 }

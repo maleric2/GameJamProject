@@ -5,8 +5,9 @@ public class Chaser : MonoBehaviour
 {
 
     public float speed = 20.0f;
-    public float minDist = 1f;
+    public bool followPlayer = false;
     public Transform target;
+    private Animator animator;
 
     // Use this for initialization
     void Start()
@@ -15,12 +16,18 @@ public class Chaser : MonoBehaviour
         if (target == null)
         {
 
-            if (GameObject.FindWithTag("Target") != null)
+            if (!followPlayer && GameObject.FindWithTag("Target") != null)
             {
                 //TODO choose target
                 target = GameObject.FindWithTag("Target").GetComponent<Transform>();
             }
+            else if (followPlayer)
+            {
+                target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
         }
+        if(gameObject.GetComponent<Animator>() != null)
+            animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,20 +36,24 @@ public class Chaser : MonoBehaviour
         //WITHOUT navmesh
         if (target == null)
             return;
-        
-        transform.LookAt(target);
 
-        //get the distance between the chaser and the target
-        float distance = Vector3.Distance(transform.position, target.position);
+        gameObject.GetComponent<NavMeshAgent>().SetDestination(target.position);
+        gameObject.GetComponent<NavMeshAgent>().speed = speed;
 
-        //so long as the chaser is farther away than the minimum distance, move towards it at rate speed.
-        if (distance > minDist)
-            transform.position += transform.forward * speed * Time.deltaTime;
+        ApplyAnimations();
     }
 
     // Set the target of the chaser
     public void SetTarget(Transform newTarget)
     {
-        target = newTarget;
+        if (!followPlayer)
+            target = newTarget;
+    }
+    private void ApplyAnimations()
+    {
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", gameObject.GetComponent<NavMeshAgent>().velocity.magnitude);
+        }
     }
 }
