@@ -17,6 +17,6 @@ public class UIDirectionControl : MonoBehaviour
     private void Update()
     {
         if (m_UseRelativeRotation)
-            transform.rotation = m_RelativeRotation;
+            transform.rotation = Quaternion.Euler(90.0f, m_RelativeRotation.y, m_RelativeRotation.z);            
     }
 }
