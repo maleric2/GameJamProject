@@ -4,7 +4,7 @@ using System.Collections;
 public class BulletExplosion : MonoBehaviour {
 
     public LayerMask enemyMask;                        // Enemies layer
-    //public ParticleSystem m_ExplosionParticles;         
+    public ParticleSystem m_ExplosionParticles;         
     //public AudioSource m_ExplosionAudio;              
     public float maxDamage = 100.0f;                    
     public float explosionForce = 1000.0f;              
@@ -40,16 +40,16 @@ public class BulletExplosion : MonoBehaviour {
         }
 
         // Unparent the particles from the shell.
-        //m_ExplosionParticles.transform.parent = null;
+        m_ExplosionParticles.transform.parent = null;
 
         // Play the particle system.
-        //m_ExplosionParticles.Play();
+        m_ExplosionParticles.Play();
 
         // Play the explosion sound effect.
         //m_ExplosionAudio.Play();
 
         // Once the particles have finished, destroy the gameobject they are on.
-        //Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.duration);
+        Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.duration);
 
         Destroy(gameObject);
     }
