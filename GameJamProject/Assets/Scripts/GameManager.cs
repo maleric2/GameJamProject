@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     private Health playerHealth;
     public int targetsAlive;
     public List<int> waveTargetNumber;
+    public float secondsBetweenWaves = 20.0f;
     //private float targetHealth=100;
 
     void Start()
