@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("If not set, the player will default to the gameObject tagged as Player.")]
     public GameObject player;
+    public int numberOfWaves;
 
     public enum gameStates { Playing, Death, GameOver, BeatLevel };
     public gameStates gameState = gameStates.Playing;
 
     public List<Transform> targets;
     public int score = 0;
+    public int currentWave = 1;
     public bool canBeatLevel = false;
     public int beatLevelScore = 0;
 
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     private Health playerHealth;
     public int targetsAlive;
+    public List<int> waveTargetNumber;
     //private float targetHealth=100;
 
     void Start()
@@ -46,9 +49,10 @@ public class GameManager : MonoBehaviour
         {
             player = GameObject.FindWithTag("Player");
         }
-        if(targets != null)
+        if (targets != null)
         {
             targetsAlive = targets.Count;
+            waveTargetNumber = new List<int>();
         }
 
         //playerHealth = player.GetComponent<Health>();
@@ -148,6 +152,36 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
+    public Transform GetWaveTarget()
+    {
+        if (currentWave == 0) currentWave = 1; 
+        if (waveTargetNumber.Count < (currentWave))
+        {
+            SetRandomTarget();
+            currentWave = waveTargetNumber.Count;
+        }
+        return targets[waveTargetNumber[currentWave-1]];
+    }
+    private void SetRandomTarget()
+    {
+        bool defined = false;
+        int targetNumber;
+        do
+        {
+            defined = true;
+            targetNumber = Random.Range(0, targets.Count);
+
+            if(waveTargetNumber.Count>0)
+            foreach(int i in waveTargetNumber)
+                {
+                    if (i == targetNumber) defined = false;
+                }
+
+        } while (!defined);
+        waveTargetNumber.Add(targetNumber);
+        Debug.Log("New Wave Target defined");
+    }
+
     public Transform GetRandomTarget()
     {
         if (isTargets())
