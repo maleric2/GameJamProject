@@ -33,17 +33,19 @@ public class Damage : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
+        {
             ApplyAnimations(true);
-
+            Debug.Log("OnTriggerEnter");
+        }
         if (damageOnTrigger)
         {
             if (this.tag == "PlayerBullet" && collision.gameObject.tag == "Player")
                 return;
 
-            if (collision.gameObject.GetComponent<Health>() != null)
+            if (collision.gameObject.GetComponent<HealthController>() != null)
             {
                 Debug.Log("OnTriggerEnter");
-                collision.gameObject.GetComponent<Health>().ApplyDamage(damageAmount);
+                collision.gameObject.GetComponent<HealthController>().TakeDamage(damageAmount);
 
                 if (destroySelfOnImpact)
                 {
@@ -129,5 +131,6 @@ public class Damage : MonoBehaviour
             animator.SetBool("Attack", attack);
         }
     }
+
 
 }

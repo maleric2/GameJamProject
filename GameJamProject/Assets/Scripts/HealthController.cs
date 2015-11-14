@@ -14,9 +14,9 @@ public class HealthController : MonoBehaviour {
     //private AudioSource m_ExplosionAudio;               // The audio source to play when the tank explodes.
     //private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed.
     private float currentHealth;                      
-    private bool isDead;                                
+    private bool isDead;
 
-
+    Animator animator;
     private void Awake()
     {
         // Instantiate the explosion prefab and get a reference to the particle system on it.
@@ -32,6 +32,11 @@ public class HealthController : MonoBehaviour {
         isDead = false;
 
         SetHealthUI();
+
+
+
+        if (gameObject.GetComponent<Animator>() != null)
+            animator = gameObject.GetComponent<Animator>();
     }
 
     public void TakeDamage(float damageAmount)
@@ -59,7 +64,12 @@ public class HealthController : MonoBehaviour {
     private void OnDeath()
     {
         isDead = true;
+        ApplyAnimations();
 
+        if(gameObject.GetComponent<NavMeshAgent>())
+            gameObject.GetComponent<NavMeshAgent>().Stop();
+
+        
         // Move the instantiated explosion prefab to the tank's position and turn it on.
         //m_ExplosionParticles.transform.position = transform.position;
         //m_ExplosionParticles.gameObject.SetActive(true);
@@ -71,6 +81,24 @@ public class HealthController : MonoBehaviour {
         //m_ExplosionAudio.Play();
 
         // Turn the tank off.
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
+
+    private void ApplyAnimations()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("Dead", isDead);
+            Invoke("Death", animator.GetCurrentAnimatorClipInfo(0)[0].clip.length+0.7f);
+        }
+    }
+    private void Death()
+    {
+        DestroyObject(this.gameObject);
+        //this.gameObject.GetComponent<Collider>().isTrigger = true;
+        //RigidbodyConstraints rgbConstraints = new RigidbodyConstraints();
+        //this.gameObject.GetComponent<Rigidbody>().constraints= rgbConstraints;
+        //this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.down);
+    }
+
 }

@@ -76,6 +76,7 @@ public class Health : MonoBehaviour
                         break;
                 }
                 Destroy(gameObject);
+                //Attackat cleaner skriptu
                 //if (this.tag == "Target") gameManager.TakeDownTarget();
             }
 
