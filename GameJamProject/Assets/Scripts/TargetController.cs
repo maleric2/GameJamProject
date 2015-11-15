@@ -17,6 +17,16 @@ public class TargetController : MonoBehaviour {
 	    if(healthController.healthSlider.value == 100.0f)
         {
             healthCanvas.SetActive(false);
+
+            foreach (Transform target in GameManager.gm.targets)
+            {
+                if (gameObject.name.Equals(target.name))
+                {
+                    GameManager.gm.targets.Remove(target);
+                    return;
+                }
+
+            }
         }
 	}
 }
