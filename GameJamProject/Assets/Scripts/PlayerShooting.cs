@@ -27,6 +27,7 @@ public class PlayerShooting : MonoBehaviour {
     public float exhaustMaximum = 100.0f;
 
     public float exhaustAcceleration;
+    public float exhaustDeceleration;
 
     private float exhaustStatus = 0.0f;
     private bool isExhausted = false;  
@@ -119,16 +120,19 @@ public class PlayerShooting : MonoBehaviour {
         {
             isExhausted = true;        
         }
-        else if (Input.GetMouseButton(0) && fireTimer >= fireSpeed)
+        else if (Input.GetMouseButton(0))
         {
             exhaustStatus += exhaustAcceleration;
             exhaustionSlider.value = exhaustStatus;
-            Fire();
-            fireTimer = 0.0f;
+            if (fireTimer >= fireSpeed)
+            {
+                Fire();
+                fireTimer = 0.0f;
+            }
         }
         else
         {
-            exhaustStatus -= exhaustAcceleration * Time.deltaTime;
+            exhaustStatus -= exhaustDeceleration * Time.deltaTime;
             exhaustionSlider.value = exhaustStatus;
         }
     }
