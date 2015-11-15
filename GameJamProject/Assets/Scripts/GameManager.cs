@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public static GameManager gm;
 
     public static float finalScore = 0.0f;
+    public static float healBotKillCount = 0.0f;
+    public static float fightBotKillCount = 0.0f;
+
+    public Text killCount;
 
     [Tooltip("If not set, the player will default to the gameObject tagged as Player.")]
     public GameObject player;
@@ -71,7 +75,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(targets.Count == 0)
+        killCount.text = "Kill Count\n <color=#" + ColorUtility.ToHtmlStringRGB(Color.blue) + ">HealBots:</color> " + healBotKillCount + "\n <color=#" + ColorUtility.ToHtmlStringRGB(Color.green) + ">FightBots:</color> " + fightBotKillCount;
+
+        if (targets.Count == 0)
         {
             gameState = gameStates.GameOver;
         }

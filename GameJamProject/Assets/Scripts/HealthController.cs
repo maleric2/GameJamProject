@@ -71,6 +71,11 @@ public class HealthController : MonoBehaviour {
     {
         GameManager.finalScore += scoreValue;
 
+        if (gameObject.tag.Equals("HealBot"))
+            GameManager.healBotKillCount += 1;
+        if (gameObject.tag.Equals("FightBot"))
+            GameManager.fightBotKillCount += 1;
+
         isDead = true;
         ApplyAnimations();
 
