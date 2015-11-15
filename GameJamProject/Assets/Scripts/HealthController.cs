@@ -79,8 +79,11 @@ public class HealthController : MonoBehaviour {
         isDead = true;
         ApplyAnimations();
 
-        if(gameObject.GetComponent<NavMeshAgent>())
-            gameObject.GetComponent<NavMeshAgent>().Stop();
+        if(gameObject.GetComponent<NavMeshAgent>()){
+			gameObject.GetComponent<NavMeshAgent>().Stop();
+			gameObject.GetComponent<Rigidbody>().velocity= new Vector3(0,0,0);
+		}
+			
 
         
         // Move the instantiated explosion prefab to the tank's position and turn it on.

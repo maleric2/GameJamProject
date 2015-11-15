@@ -43,6 +43,10 @@ public class Chaser : MonoBehaviour
         if (target.GetComponent<HealthController>().isFullHealth())
             FindNewTarget();
         ApplyAnimations();
+
+		if (gameObject.GetComponent<HealthController> ().currentHealth <= 0) {
+			gameObject.GetComponent<NavMeshAgent>().speed = 0;
+		}
     }
     private void FindNewTarget()
     {
