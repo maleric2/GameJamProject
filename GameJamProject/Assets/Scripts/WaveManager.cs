@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class WaveManager : MonoBehaviour
 {
     public static WaveManager wm;
+    public float secondsBetweenWaves = 20.0f;
     public float secondsBetweenSpawning = 3f;
     public int maxNumberOfWaves;
     //public List<int> waveTargetNumber;
@@ -40,7 +41,7 @@ public class WaveManager : MonoBehaviour
             GetRandomTarget();
             currentWave = waveTargetNumber.Count;
         }*/
-        if (gameManager.targets[currentTarget] != null)
+        if (gameManager.targets.Count> currentTarget && gameManager.targets[currentTarget] != null)
             return gameManager.targets[currentTarget];
         else
         {
