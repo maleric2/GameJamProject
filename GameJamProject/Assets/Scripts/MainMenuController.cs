@@ -18,6 +18,11 @@ public class MainMenuController : MonoBehaviour {
         Application.LoadLevel(1);
     }
 
+    public void RestartLevel()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
     public void Credits()
     {
         //TO DO
