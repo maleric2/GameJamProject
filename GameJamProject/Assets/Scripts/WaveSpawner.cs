@@ -34,9 +34,10 @@ public class WaveSpawner : MonoBehaviour
     }
     public void makeWave()
     {
+        savedTime = Time.time; // store for next spawn
         startWaveNumber += waveIncrement;
         currentWave++;
-        currentWaveSpawner = 0;
+        currentWaveSpawner = 1;
         waveManager.makeWave(currentWave);
         //Debug.Log("Get ready for wave " + currentWave);
     }
@@ -50,9 +51,7 @@ public class WaveSpawner : MonoBehaviour
             {
                 gameManager.gameState = GameManager.gameStates.Playing;
                 makeWave();
-                savedTime = Time.time; // store for next spawn
-                secondsBetweenSpawning = secondsBetweenSpawning * 0.8f;
-                currentWaveSpawner++;
+                //secondsBetweenSpawning = secondsBetweenSpawning * 0.8f;
                 return true;
             }
         }

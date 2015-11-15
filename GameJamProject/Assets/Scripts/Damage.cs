@@ -70,6 +70,11 @@ public class Damage : MonoBehaviour
 
             if (this.tag.Equals(collision.gameObject.tag))
                 return;
+            if (collision.gameObject.tag.Equals("Target"))
+            {
+                if (damageAmount > 0)
+                    return;
+            }
 
             if (collision.gameObject.GetComponent<HealthController>() != null)
             {
@@ -113,6 +118,11 @@ public class Damage : MonoBehaviour
         {
             if ((collision.gameObject.tag == "Target" || collision.gameObject.tag == "Player") && collision.gameObject.GetComponent<HealthController>() != null)
             {   // is only triggered if whatever it hits is the player
+                if (collision.gameObject.tag.Equals("Target"))
+                {
+                    if (damageAmount > 0)
+                        return;
+                }
                 if (Time.time - savedTime >= continuousTimeBetweenHits)
                 {
                     ApplyAnimations(true);

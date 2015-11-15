@@ -7,7 +7,8 @@ public class WaveManager : MonoBehaviour
     public static WaveManager wm;
     public float secondsBetweenSpawning = 3f;
     public int maxNumberOfWaves;
-    public List<int> waveTargetNumber;
+    //public List<int> waveTargetNumber;
+    public int currentTarget;
 
     public int currentWave = 1;
 
@@ -23,7 +24,7 @@ public class WaveManager : MonoBehaviour
             wm = gameObject.GetComponent<WaveManager>();
 
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        waveTargetNumber = new List<int>();
+        //waveTargetNumber = new List<int>();
     }
 
     // Update is called once per frame
@@ -34,27 +35,27 @@ public class WaveManager : MonoBehaviour
     public Transform GetWaveTarget()
     {
         if (currentWave == 0) currentWave = 1;
-        if (waveTargetNumber.Count < (currentWave)) //if there is new wave
+        /*if (waveTargetNumber.Count < (currentWave)) //if there is new wave
         {
             GetRandomTarget();
             currentWave = waveTargetNumber.Count;
-        }
-        if (gameManager.targets[waveTargetNumber[currentWave - 1]] != null)
-            return gameManager.targets[waveTargetNumber[currentWave - 1]];
+        }*/
+        if (gameManager.targets[currentTarget] != null)
+            return gameManager.targets[currentTarget];
         else
         {
-            GetRandomTarget(currentWave - 1);
-            return gameManager.targets[waveTargetNumber[currentWave - 1]];
+            GetRandomTarget();
+            return gameManager.targets[currentTarget];
         }
     }
 
-    private void GetRandomTarget(int index)
+   /* private void GetRandomTarget(int index)
     {
         waveTargetNumber.Insert(index, SetRandomTarget());
-    }
+    }*/
     private void GetRandomTarget()
     {
-        waveTargetNumber.Add(SetRandomTarget());
+        currentTarget = SetRandomTarget();
     }
     private int SetRandomTarget()
     {
@@ -65,7 +66,7 @@ public class WaveManager : MonoBehaviour
             defined = true;
             targetNumber = Random.Range(0, gameManager.targets.Count);
 
-            if (waveTargetNumber.Count > 0)
+            if (GameManager.gm.targets.Count > 0)
             {
                 if (GameManager.gm.targets[targetNumber] == null) defined = false;
             }
@@ -83,7 +84,7 @@ public class WaveManager : MonoBehaviour
             startWaveNumber += waveIncrement;
             currentWave = wave;
             Debug.Log("Get ready for wave " + currentWave);
-
+            GetRandomTarget();
         }
     }
 

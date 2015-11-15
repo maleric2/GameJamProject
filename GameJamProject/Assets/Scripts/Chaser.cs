@@ -40,9 +40,14 @@ public class Chaser : MonoBehaviour
         gameObject.GetComponent<NavMeshAgent>().SetDestination(target.position);
         gameObject.GetComponent<NavMeshAgent>().speed = speed;
 
+        if (target.GetComponent<HealthController>().isFullHealth())
+            FindNewTarget();
         ApplyAnimations();
     }
-
+    private void FindNewTarget()
+    {
+        SetTarget(GameManager.gm.GetRandomTarget());
+    }
     // Set the target of the chaser
     public void SetTarget(Transform newTarget)
     {

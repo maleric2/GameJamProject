@@ -20,7 +20,7 @@ public class TargetController : MonoBehaviour {
 
             foreach (Transform target in GameManager.gm.targets)
             {
-                if (gameObject.name.Equals(target.name))
+                if (this.gameObject.transform.Equals(target))
                 {
                     GameManager.gm.targets.Remove(target);
                     return;

@@ -8,12 +8,6 @@ public class SpawnGameObjects : MonoBehaviour
     private GameManager gameManager;
     private WaveSpawner waveSpawner;
 
-    //public float minSecondsBetweenSpawning = 3.0f;
-    //public float maxSecondsBetweenSpawning = 6.0f;
-
-    //private float savedTime;
-    //private float secondsBetweenSpawning;
-
 
     // Use this for initialization
     void Start()
@@ -46,6 +40,8 @@ public class SpawnGameObjects : MonoBehaviour
         if ((gameManager != null) && (gameManager.isTargets()) && (clone.gameObject.GetComponent<Chaser>() != null))
         {
             clone.gameObject.GetComponent<Chaser>().SetTarget(waveSpawner.GetWaveTarget());
+            clone.transform.parent = this.transform;
+            
         }
     }
 }

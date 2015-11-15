@@ -59,7 +59,11 @@ public class HealthController : MonoBehaviour {
         // Interpolate the color of the bar between the choosen colours based on the current percentage of the starting health.
         healthImage.color = Color.Lerp(zeroHealthColor, fullHealthColor, currentHealth / startingHealth);
     }
-
+    public bool isFullHealth()
+    {
+        if (currentHealth >= 100) return true;
+        else return false;
+    }
 
     private void OnDeath()
     {
