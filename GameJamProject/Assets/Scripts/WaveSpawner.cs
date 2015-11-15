@@ -28,6 +28,7 @@ public class WaveSpawner : MonoBehaviour
         secondsBetweenWaves = waveManager.secondsBetweenWaves;
         waveIncrement = waveManager.waveIncrement;
         savedTime = Random.Range(-1*secondsBetweenSpawning*0.9f, 0);
+        waveManager.RegisterSpawner();
     }
     public Transform GetWaveTarget()
     {
@@ -47,16 +48,18 @@ public class WaveSpawner : MonoBehaviour
         //if new wave and this return true
         if (currentWaveSpawner >= startWaveNumber)
         {
+            
             gameManager.gameState = GameManager.gameStates.WaitingWave;
             if (Time.time - savedTime >= secondsBetweenWaves)
             {
                 gameManager.gameState = GameManager.gameStates.Playing;
+                waveManager.ICompletedWave();
                 makeWave();
                 //secondsBetweenSpawning = secondsBetweenSpawning * 0.8f;
                 return true;
             }
         }
-        else
+        else if(!waveManager.SpawnersCompletedWave())
         {
             if (Time.time - savedTime >= secondsBetweenSpawning) // is it time to spawn again?
             {

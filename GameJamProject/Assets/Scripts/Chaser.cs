@@ -50,7 +50,8 @@ public class Chaser : MonoBehaviour
     }
     private void FindNewTarget()
     {
-        SetTarget(GameManager.gm.GetRandomTarget());
+        WaveManager.wm.GetRandomTarget();
+        SetTarget(WaveManager.wm.GetWaveTarget());
     }
     // Set the target of the chaser
     public void SetTarget(Transform newTarget)

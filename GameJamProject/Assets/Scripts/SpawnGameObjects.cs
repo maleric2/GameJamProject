@@ -39,7 +39,8 @@ public class SpawnGameObjects : MonoBehaviour
         //TODO chose random target form targets in gameManager
         if ((gameManager != null) && (gameManager.isTargets()) && (clone.gameObject.GetComponent<Chaser>() != null))
         {
-            clone.gameObject.GetComponent<Chaser>().SetTarget(waveSpawner.GetWaveTarget());
+            WaveManager.wm.GetRandomTarget();
+            clone.gameObject.GetComponent<Chaser>().SetTarget(WaveManager.wm.GetWaveTarget());
             clone.transform.parent = this.transform;
             
         }
