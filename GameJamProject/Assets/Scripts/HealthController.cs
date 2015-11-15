@@ -9,9 +9,9 @@ public class HealthController : MonoBehaviour {
     public float startingHealth = 100.0f;               
     public Slider healthSlider;                             
     public Image healthImage;                           
-    public Color fullHealthColor = Color.green;       
-    public Color zeroHealthColor = Color.red;         
-    //public GameObject explosionPrefab;                
+    public Color fullHealthColor = new Color(0.87f, 0.541f, 0, 1);
+    public Color zeroHealthColor = new Color(0.4196f, 0.9647f, 1, 1);
+    //public GameObject explosionPrefab;                new Color (0.4196f, 0.9647f, 1, 1);
 
     //private AudioSource m_ExplosionAudio;               // The audio source to play when the tank explodes.
     //private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed.
