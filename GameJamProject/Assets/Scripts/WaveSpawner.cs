@@ -27,6 +27,7 @@ public class WaveSpawner : MonoBehaviour
         startWaveNumber = waveManager.startWaveNumber;
         secondsBetweenWaves = waveManager.secondsBetweenWaves;
         waveIncrement = waveManager.waveIncrement;
+        savedTime = Random.Range(-1*secondsBetweenSpawning*0.9f, 0);
     }
     public Transform GetWaveTarget()
     {
