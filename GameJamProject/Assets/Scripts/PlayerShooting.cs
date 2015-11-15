@@ -6,7 +6,7 @@ public class PlayerShooting : MonoBehaviour {
 
     public Rigidbody bulletPrefab;                   
     public Transform fireTransformPoint;          
-    public Slider aimSlider;                
+    //public Slider aimSlider;                
     public AudioSource shootingAudioSource;
     public AudioClip chargingClip;            
     public AudioClip fireClip;                
@@ -18,12 +18,24 @@ public class PlayerShooting : MonoBehaviour {
     private float chargeSpeed;                
     private bool isFired;
 
-    Animator animator;                 
+    Animator animator;
+
+    public float fireSpeed;
+    private float fireTimer;
+
+    public Slider exhaustionSlider;
+    public float exhaustMaximum = 100.0f;
+
+    public float exhaustAcceleration;
+
+    private float exhaustStatus = 0.0f;
+    private bool isExhausted = false;  
 
     private void Start()
     {
+        fireTimer = fireSpeed;
         currentLaunchForce = minLaunchForce;
-        aimSlider.value = minLaunchForce;
+        //aimSlider.value = minLaunchForce;
 
         // The rate that the launch force charges up is the range of possible forces by the max charge time.
         chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
@@ -34,8 +46,9 @@ public class PlayerShooting : MonoBehaviour {
 
     private void Update()
     {
-        aimSlider.value = minLaunchForce;
+        //aimSlider.value = minLaunchForce;
 
+        /*
         // If the max force has been exceeded and the shell hasn't yet been launched...
         if (currentLaunchForce >= maxLaunchForce && !isFired)
         {
@@ -80,6 +93,43 @@ public class PlayerShooting : MonoBehaviour {
             animator.SetBool("isShooting", true);
 
             Fire();
+        }*/
+
+        if (Input.GetMouseButtonDown(0))
+            animator.SetBool("isShooting", true);
+
+        if(Input.GetMouseButtonUp(0))
+            animator.SetBool("isShooting", false);
+
+        fireTimer += Time.deltaTime;
+
+        if (isExhausted)
+        {
+            exhaustStatus -= exhaustAcceleration * Time.deltaTime;
+            exhaustionSlider.value = exhaustStatus;
+
+            if (exhaustStatus <= 0.0f)
+            {
+                exhaustStatus = 0.0f;
+                isExhausted = false;
+            }
+        }
+
+        if(exhaustStatus >= exhaustMaximum)
+        {
+            isExhausted = true;        
+        }
+        else if (Input.GetMouseButton(0) && fireTimer >= fireSpeed)
+        {
+            exhaustStatus += exhaustAcceleration;
+            exhaustionSlider.value = exhaustStatus;
+            Fire();
+            fireTimer = 0.0f;
+        }
+        else
+        {
+            exhaustStatus -= exhaustAcceleration * Time.deltaTime;
+            exhaustionSlider.value = exhaustStatus;
         }
     }
 
@@ -97,8 +147,6 @@ public class PlayerShooting : MonoBehaviour {
         shootingAudioSource.Play();
 
         // Reset the launch force.  This is a precaution in case of missing button events.
-        currentLaunchForce = minLaunchForce;
-
-        animator.SetBool("isShooting", false);
+        currentLaunchForce = minLaunchForce;   
     }
 }
