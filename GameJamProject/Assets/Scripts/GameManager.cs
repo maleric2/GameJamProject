@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("If not set, the player will default to the gameObject tagged as Player.")]
     public GameObject player;
 
-    public enum gameStates { Playing, Death, GameOver, BeatLevel };
+    public enum gameStates { Playing, Death, GameOver, BeatLevel, WaitingWave};
     public gameStates gameState = gameStates.Playing;
 
     public List<Transform> targets;
@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public Text mainScoreDisplay;
     public GameObject gameOverCanvas;
     public Text gameOverScoreDisplay;
+
+    public GameObject newWaveCanvas;
+    public Text newWaveTextDisplay;
 
     [Tooltip("Only need to set if canBeatLevel is set to true.")]
     public GameObject beatLevelCanvas;
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
         switch (gameState)
         {
             case gameStates.Playing:
+                newWaveCanvas.SetActive(false);
                 if (!isAnyTarget())
                 {
                     // update gameState
@@ -94,6 +98,10 @@ public class GameManager : MonoBehaviour
 					mainCanvas.SetActive (false);
 					beatLevelCanvas.SetActive (true);
 				}*/
+                break;
+            case gameStates.WaitingWave:
+                newWaveCanvas.SetActive(true);
+                newWaveTextDisplay.text = "Wave " + (WaveManager.wm.currentWave+1) + " incoming";
                 break;
             case gameStates.Death:
                 if (backgroundMusic != null)

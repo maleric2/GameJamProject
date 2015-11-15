@@ -35,7 +35,7 @@ public class Damage : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             ApplyAnimations(true);
-            Debug.Log("OnTriggerEnter");
+            //Debug.Log("OnTriggerEnter");
         }
         if (damageOnTrigger)
         {
@@ -44,7 +44,7 @@ public class Damage : MonoBehaviour
 
             if (collision.gameObject.GetComponent<HealthController>() != null)
             {
-                Debug.Log("OnTriggerEnter");
+                //Debug.Log("OnTriggerEnter");
                 collision.gameObject.GetComponent<HealthController>().TakeDamage(damageAmount);
 
                 if (destroySelfOnImpact)
@@ -73,7 +73,7 @@ public class Damage : MonoBehaviour
 
             if (collision.gameObject.GetComponent<HealthController>() != null)
             {
-                Debug.Log("OnCollisionEnter");
+               // Debug.Log("OnCollisionEnter");
                 ApplyAnimations(true);
                 collision.gameObject.GetComponent<HealthController>().TakeDamage(damageAmount);
 
@@ -101,7 +101,7 @@ public class Damage : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<HealthController>() != null)
             {
-                Debug.Log("OnCollisionExit");
+                //Debug.Log("OnCollisionExit");
                 ApplyAnimations(false);
             }
         }

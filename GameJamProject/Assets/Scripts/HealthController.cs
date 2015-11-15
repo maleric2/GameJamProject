@@ -89,7 +89,8 @@ public class HealthController : MonoBehaviour {
         if (animator != null)
         {
             animator.SetBool("Dead", isDead);
-            Invoke("Death", animator.GetCurrentAnimatorClipInfo(0)[0].clip.length+0.7f);
+            Invoke("Death", 1.2f);
+            //Invoke("Death", animator.GetCurrentAnimatorClipInfo(0)[0].clip.length+0.7f);
         }
     }
     private void Death()

@@ -6,7 +6,7 @@ public class SpawnGameObjects : MonoBehaviour
 
     public GameObject spawnPrefab;
     private GameManager gameManager;
-    private WaveManager waveManager;
+    private WaveSpawner waveSpawner;
 
     //public float minSecondsBetweenSpawning = 3.0f;
     //public float maxSecondsBetweenSpawning = 6.0f;
@@ -20,35 +20,19 @@ public class SpawnGameObjects : MonoBehaviour
     {
         //savedTime = Time.time;
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        waveManager = GameObject.FindObjectOfType<WaveManager>();
+        waveSpawner = gameObject.GetComponent<WaveSpawner>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        waveManager.makeWave();
         MakeWave();
-        /*if (currentWaveSpawner >= startWaveNumber)
-        {
-            startWaveNumber += waveIncrement;
-            gameManager.currentWave++;
-            Debug.Log("Get ready for wave " + gameManager.currentWave);
-            doWaveSpawning = false;
-            currentWaveSpawner = 0;
-        }
-        else
-        {
-            MakeWave();
-        }
-        if (Time.time - savedTime >= gameManager.secondsBetweenWaves) // is it time for new wave?
-        {
-            doWaveSpawning = true;
-        }*/
+
     }
     void MakeWave()
     {
-        if (waveManager.doWaveSpawn())
+        if (waveSpawner.doWaveSpawn())
                 MakeThingToSpawn();
 
     }
@@ -61,7 +45,7 @@ public class SpawnGameObjects : MonoBehaviour
         //TODO chose random target form targets in gameManager
         if ((gameManager != null) && (gameManager.isTargets()) && (clone.gameObject.GetComponent<Chaser>() != null))
         {
-            clone.gameObject.GetComponent<Chaser>().SetTarget(waveManager.GetWaveTarget());
+            clone.gameObject.GetComponent<Chaser>().SetTarget(waveSpawner.GetWaveTarget());
         }
     }
 }

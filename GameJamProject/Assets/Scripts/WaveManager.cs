@@ -2,29 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class WaveManager : MonoBehaviour {
+public class WaveManager : MonoBehaviour
+{
+    public static WaveManager wm;
+    public float secondsBetweenSpawning = 3f;
     public int maxNumberOfWaves;
     public List<int> waveTargetNumber;
 
-    public float secondsBetweenSpawning;
-    public float secondsBetweenWaves = 20.0f;
-
-    public float minSecondsBetweenSpawning = 3.0f;
-    public float maxSecondsBetweenSpawning = 6.0f;
     public int currentWave = 1;
 
-    public float savedTime=0f;
     public int startWaveNumber = 10;
     public int waveIncrement = 5;
 
-    private bool doWaveSpawning = true;
     public int currentWaveSpawner = 0;
     public GameManager gameManager;
     // Use this for initialization
     void Start()
     {
-
-        secondsBetweenSpawning = Random.Range(minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
+        if(wm == null)
+            wm = gameObject.GetComponent<WaveManager>();
 
         gameManager = GameObject.FindObjectOfType<GameManager>();
         waveTargetNumber = new List<int>();
@@ -38,51 +34,57 @@ public class WaveManager : MonoBehaviour {
     public Transform GetWaveTarget()
     {
         if (currentWave == 0) currentWave = 1;
-        if (waveTargetNumber.Count < (currentWave))
+        if (waveTargetNumber.Count < (currentWave)) //if there is new wave
         {
-            SetRandomTarget();
+            GetRandomTarget();
             currentWave = waveTargetNumber.Count;
         }
-        return gameManager.targets[waveTargetNumber[currentWave - 1]];
+        if (gameManager.targets[waveTargetNumber[currentWave - 1]] != null)
+            return gameManager.targets[waveTargetNumber[currentWave - 1]];
+        else
+        {
+            GetRandomTarget(currentWave - 1);
+            return gameManager.targets[waveTargetNumber[currentWave - 1]];
+        }
     }
-    private void SetRandomTarget()
+
+    private void GetRandomTarget(int index)
+    {
+        waveTargetNumber.Insert(index, SetRandomTarget());
+    }
+    private void GetRandomTarget()
+    {
+        waveTargetNumber.Add(SetRandomTarget());
+    }
+    private int SetRandomTarget()
     {
         bool defined = false;
-        int targetNumber = Random.Range(0, gameManager.targets.Count);
-        /*do
+        int targetNumber;
+        do
         {
             defined = true;
             targetNumber = Random.Range(0, gameManager.targets.Count);
 
             if (waveTargetNumber.Count > 0)
-                foreach (int i in waveTargetNumber)
-                {
-                    if (i == targetNumber) defined = false;
-                }
+            {
+                if (GameManager.gm.targets[targetNumber] == null) defined = false;
+            }
+            else Debug.Log("No targets");
 
-        } while (!defined);*/
-        waveTargetNumber.Add(targetNumber);
+        } while (!defined);
+
         Debug.Log("New Wave Target defined");
+        return targetNumber;
     }
-    public void makeWave()
+    public void makeWave(int wave)
     {
-        if (currentWaveSpawner >= startWaveNumber)
+        if (wave > currentWave)
         {
             startWaveNumber += waveIncrement;
-            currentWave++;
+            currentWave = wave;
             Debug.Log("Get ready for wave " + currentWave);
-            doWaveSpawning = false;
-            currentWaveSpawner = 0;
+
         }
     }
-    public bool doWaveSpawn()
-    {
-        if (Time.time - savedTime >= secondsBetweenSpawning) // is it time to spawn again?
-        {
-            savedTime = Time.time; // store for next spawn
-            secondsBetweenSpawning = Random.Range(minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
-            currentWaveSpawner++;
-        }
-            return false;
-    }
+
 }
