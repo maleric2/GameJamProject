@@ -12,11 +12,11 @@ public class PlayerMovement : MonoBehaviour {
     float camRayLength = 100f;
 
     private float moveH;
-    private float moveV;        
+    private float moveV;      
 
     void Awake()
     {
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
     {   
         Move();
         Turning();
-        //Animating(h, v);
+        Animating();
     }
 
     void Move()
@@ -65,13 +65,13 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-/*    void Animating(float h, float v)
+    void Animating()
     {
         // Create a boolean that is true if either of the input axes is non-zero.
-        bool walking = h != 0f || v != 0f;
+        bool running = moveH != 0f || moveV != 0f;
 
         // Tell the animator whether or not the player is walking.
-        animator.SetBool("IsWalking", walking);
+        animator.SetBool("isRunning", running);
     }
-    */
+    
 }

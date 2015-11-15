@@ -14,7 +14,7 @@ public class TargetController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if(healthController.healthSlider.value == 100.0f)
+	    if(healthController.currentHealth >= 100.0f)
         {
             healthCanvas.SetActive(false);
 

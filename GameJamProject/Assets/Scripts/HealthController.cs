@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour {
 
+    public float scoreValue;
+
     public float startingHealth = 100.0f;               
     public Slider healthSlider;                             
     public Image healthImage;                           
@@ -13,7 +15,7 @@ public class HealthController : MonoBehaviour {
 
     //private AudioSource m_ExplosionAudio;               // The audio source to play when the tank explodes.
     //private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed.
-    private float currentHealth;                      
+    public float currentHealth;                      
     private bool isDead;
 
     Animator animator;
@@ -67,6 +69,8 @@ public class HealthController : MonoBehaviour {
 
     private void OnDeath()
     {
+        GameManager.finalScore += scoreValue;
+
         isDead = true;
         ApplyAnimations();
 
@@ -93,12 +97,19 @@ public class HealthController : MonoBehaviour {
         if (animator != null)
         {
             animator.SetBool("Dead", isDead);
-            Invoke("Death", 1.2f);
+
+            if(gameObject.tag.Equals("Player"))
+                Invoke("Death", 2.0f);
+            else
+                Invoke("Death", 1.2f);
             //Invoke("Death", animator.GetCurrentAnimatorClipInfo(0)[0].clip.length+0.7f);
         }
     }
     private void Death()
     {
+        if(gameObject.tag.Equals("Player"))
+        GameManager.gm.gameState = GameManager.gameStates.GameOver;
+
         DestroyObject(this.gameObject);
         //this.gameObject.GetComponent<Collider>().isTrigger = true;
         //RigidbodyConstraints rgbConstraints = new RigidbodyConstraints();

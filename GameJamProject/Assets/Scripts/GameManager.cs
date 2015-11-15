@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager gm;
 
+    public static float finalScore = 0.0f;
+
     [Tooltip("If not set, the player will default to the gameObject tagged as Player.")]
     public GameObject player;
 
@@ -42,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1.0f;
+
         if (gm == null)
             gm = gameObject.GetComponent<GameManager>();
 
@@ -67,6 +71,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if(targets.Count == 0)
+        {
+            gameState = gameStates.GameOver;
+        }
+
         switch (gameState)
         {
             case gameStates.Playing:
@@ -128,7 +137,12 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case gameStates.GameOver:
-                // nothing
+                gameOverCanvas.SetActive(true);
+                gameOverScoreDisplay.text = "Other computers infected: " + Mathf.Round(finalScore * Time.timeSinceLevelLoad);
+                mainCanvas.GetComponent<TimerController>().enabled = false;
+                backgroundMusic.pitch = 0.2f;
+
+                Time.timeScale = 0.0f;
                 break;
         }
 

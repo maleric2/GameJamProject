@@ -16,7 +16,9 @@ public class PlayerShooting : MonoBehaviour {
 
     private float currentLaunchForce;         
     private float chargeSpeed;                
-    private bool isFired;                   
+    private bool isFired;
+
+    Animator animator;                 
 
     private void Start()
     {
@@ -25,6 +27,8 @@ public class PlayerShooting : MonoBehaviour {
 
         // The rate that the launch force charges up is the range of possible forces by the max charge time.
         chargeSpeed = (maxLaunchForce - minLaunchForce) / maxChargeTime;
+
+        animator = gameObject.GetComponent<Animator>();
     }
 
 
@@ -35,6 +39,8 @@ public class PlayerShooting : MonoBehaviour {
         // If the max force has been exceeded and the shell hasn't yet been launched...
         if (currentLaunchForce >= maxLaunchForce && !isFired)
         {
+            animator.SetBool("isShooting", true);
+
             // ... use the max force and launch the shell.
             currentLaunchForce = maxLaunchForce;
             Fire();
@@ -48,6 +54,8 @@ public class PlayerShooting : MonoBehaviour {
         // Otherwise, if the fire button has just started being pressed...
         else if (Input.GetMouseButtonDown(0))
         {
+            animator.SetBool("isShooting", true);
+
             // ... reset the fired flag and reset the launch force.
             isFired = false;
             currentLaunchForce = minLaunchForce;
@@ -59,6 +67,8 @@ public class PlayerShooting : MonoBehaviour {
         // Otherwise, if the fire button is being held and the shell hasn't been launched yet...
         else if (Input.GetMouseButton(0) && !isFired)
         {
+            animator.SetBool("isShooting", true);
+
             // Increment the launch force and update the slider.
             currentLaunchForce += chargeSpeed * Time.deltaTime;
 
@@ -67,13 +77,15 @@ public class PlayerShooting : MonoBehaviour {
         // Otherwise, if the fire button is released and the shell hasn't been launched yet...
         else if (Input.GetMouseButtonUp(0) && !isFired)
         {
+            animator.SetBool("isShooting", true);
+
             Fire();
         }
     }
 
     private void Fire()
     {
-        isFired = true;
+        isFired = true;        
 
         Rigidbody shellInstance = (Rigidbody)Instantiate(bulletPrefab, fireTransformPoint.position, fireTransformPoint.rotation);
 
@@ -86,5 +98,7 @@ public class PlayerShooting : MonoBehaviour {
 
         // Reset the launch force.  This is a precaution in case of missing button events.
         currentLaunchForce = minLaunchForce;
+
+        animator.SetBool("isShooting", false);
     }
 }
