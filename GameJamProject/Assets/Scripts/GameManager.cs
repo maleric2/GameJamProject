@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("If not set, the player will default to the gameObject tagged as Player.")]
     public GameObject player;
 
-    public enum gameStates { Playing, Death, GameOver, BeatLevel, WaitingWave};
+    public enum gameStates { Playing, Death, GameOver, BeatLevel, WaitingWave };
     public gameStates gameState = gameStates.Playing;
 
     public List<Transform> targets;
@@ -115,8 +115,8 @@ public class GameManager : MonoBehaviour
 				}*/
                 break;
             case gameStates.WaitingWave:
-                newWaveCanvas.SetActive(true);
-                newWaveTextDisplay.text = "Wave " + (WaveManager.wm.currentWave+1) + " incoming";
+                Invoke("NewWaveCanvasActive", 0f);
+                newWaveTextDisplay.text = "Wave " + (WaveManager.wm.currentWave + 1) + " incoming";
                 break;
             case gameStates.Death:
                 if (backgroundMusic != null)
@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
-    
+
 
     public Transform GetRandomTarget()
     {
@@ -207,5 +207,9 @@ public class GameManager : MonoBehaviour
     public void TakeDownTarget()
     {
         //targetsAlive--;
+    }
+    private void NewWaveCanvasActive()
+    {
+        newWaveCanvas.SetActive(true);
     }
 }

@@ -6,8 +6,7 @@ public class WaveSpawner : MonoBehaviour
 {
 
     private float secondsBetweenSpawning;
-    public float secondsBetweenWaves = 20.0f;
-
+    private float secondsBetweenWaves = 20.0f;
     public int currentWave = 1;
 
     public float savedTime = 0f;
@@ -26,6 +25,7 @@ public class WaveSpawner : MonoBehaviour
         waveManager = GameObject.FindObjectOfType<WaveManager>();
         secondsBetweenSpawning = waveManager.secondsBetweenSpawning;
         startWaveNumber = waveManager.startWaveNumber;
+        secondsBetweenWaves = waveManager.secondsBetweenWaves;
         waveIncrement = waveManager.waveIncrement;
     }
     public Transform GetWaveTarget()
