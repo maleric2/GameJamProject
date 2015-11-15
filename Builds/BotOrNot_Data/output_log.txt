@@ -1,0 +1,262 @@
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics 3000 (ID=0x116)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.057 seconds
+desktop: 1680x1050 60Hz; virtual: 3046x1050 at -1366,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 383c -> priority: 1 
+  Thread -> id: 3324 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 9.015749 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 271.
+Total: 0.798480 ms (FindLiveObjects: 0.074408 ms CreateObjectMapping: 0.051829 ms MarkObjects: 0.639913 ms  DeleteObjects: 0.030789 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.273668 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 310.
+Total: 2.473955 ms (FindLiveObjects: 0.076974 ms CreateObjectMapping: 0.030276 ms MarkObjects: 2.323085 ms  DeleteObjects: 0.042079 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.949863 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 296.
+Total: 0.322265 ms (FindLiveObjects: 0.024118 ms CreateObjectMapping: 0.017960 ms MarkObjects: 0.269923 ms  DeleteObjects: 0.009750 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.657874 ms
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 310.
+Total: 0.354082 ms (FindLiveObjects: 0.036434 ms CreateObjectMapping: 0.019500 ms MarkObjects: 0.284291 ms  DeleteObjects: 0.012829 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.648124 ms
+
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 1381.
+Total: 0.702519 ms (FindLiveObjects: 0.078000 ms CreateObjectMapping: 0.034381 ms MarkObjects: 0.519320 ms  DeleteObjects: 0.069790 ms)
+
+Random: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Boo.Lang.dll (this message is harmless)
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics 3000 (ID=0x116)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.061 seconds
+desktop: 1680x1050 60Hz; virtual: 3046x1050 at -1366,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 23a8 -> priority: 1 
+  Thread -> id: 1e88 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.565245 ms
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 1381.
+Total: 0.605018 ms (FindLiveObjects: 0.053882 ms CreateObjectMapping: 0.035408 ms MarkObjects: 0.445938 ms  DeleteObjects: 0.069790 ms)
+
+Random: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Platform assembly: D:\PROJECTS\GAMES\Unity5\GameJamProject\Builds\BotOrNot_Data\Managed\Boo.Lang.dll (this message is harmless)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.532456 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 1390.
+Total: 0.730230 ms (FindLiveObjects: 0.095448 ms CreateObjectMapping: 0.032329 ms MarkObjects: 0.585518 ms  DeleteObjects: 0.015394 ms)
+
+Random: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Random: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Get ready for wave 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.917687 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 1396.
+Total: 0.780519 ms (FindLiveObjects: 0.093395 ms CreateObjectMapping: 0.033355 ms MarkObjects: 0.640426 ms  DeleteObjects: 0.012829 ms)
+
+Random: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.081386 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 1402.
+Total: 0.863139 ms (FindLiveObjects: 0.137014 ms CreateObjectMapping: 0.034895 ms MarkObjects: 0.676347 ms  DeleteObjects: 0.013855 ms)
+
+Random: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.274335 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 1408.
+Total: 1.101759 ms (FindLiveObjects: 0.099040 ms CreateObjectMapping: 0.035921 ms MarkObjects: 0.951403 ms  DeleteObjects: 0.013855 ms)
+
+Random: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.332836 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 1414.
+Total: 0.836454 ms (FindLiveObjects: 0.103658 ms CreateObjectMapping: 0.033868 ms MarkObjects: 0.684558 ms  DeleteObjects: 0.013342 ms)
+
+Random: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Random: 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Get ready for wave 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 26.146648 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 1420.
+Total: 0.895468 ms (FindLiveObjects: 0.055934 ms CreateObjectMapping: 0.034895 ms MarkObjects: 0.790783 ms  DeleteObjects: 0.012829 ms)
+
+Random: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Target Good
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+New Wave Target defined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+

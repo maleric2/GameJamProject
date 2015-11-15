@@ -36,8 +36,7 @@ public class MainMenuController : MonoBehaviour {
 
     public void Credits()
     {
-        //TO DO
-        // implement Credits canvas and switch controller
+        Application.LoadLevel(3);
     }
 
     public void Exit()
