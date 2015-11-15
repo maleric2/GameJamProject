@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
 
+        finalScore = 0.0f;
+        healBotKillCount = 0.0f;
+        fightBotKillCount = 0.0f;
+
         if (gm == null)
             gm = gameObject.GetComponent<GameManager>();
 
