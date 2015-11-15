@@ -31,10 +31,10 @@ public class BulletExplosion : MonoBehaviour {
 
             targetRigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
             targetRigidbody.MovePosition(targetRigidbody.position);
-            targetRigidbody.GetComponent<NavMeshAgent>().Stop();
-            targetRigidbody.GetComponent<NavMeshAgent>().Resume();
+            /*targetRigidbody.GetComponent<NavMeshAgent>().Stop();
+            targetRigidbody.GetComponent<NavMeshAgent>().Resume();*/
             HealthController targetHealth = targetRigidbody.GetComponent<HealthController>();
-
+            
             if (!targetHealth)
                 continue;
 

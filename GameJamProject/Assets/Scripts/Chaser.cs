@@ -36,18 +36,34 @@ public class Chaser : MonoBehaviour
         //WITHOUT navmesh
         if (target == null)
             return;
-
-        gameObject.GetComponent<NavMeshAgent>().SetDestination(target.position);
-        gameObject.GetComponent<NavMeshAgent>().speed = speed;
+        Move();
+        
 
         if (target.GetComponent<HealthController>().isFullHealth())
             FindNewTarget();
         ApplyAnimations();
 
-		if (gameObject.GetComponent<HealthController> ().currentHealth <= 0) {
+		/*if (gameObject.GetComponent<HealthController> ().currentHealth <= 0) {
 			gameObject.GetComponent<NavMeshAgent>().speed = 0;
-		}
+		}*/
     }
+    void Move()
+    {
+        //NAVMESH
+        /*gameObject.GetComponent<NavMeshAgent>().SetDestination(target.position);
+        gameObject.GetComponent<NavMeshAgent>().speed = speed;
+        */
+
+        transform.LookAt(target);
+
+        //get the distance between the chaser and the target
+        float distance = Vector3.Distance(transform.position, target.position);
+
+        //so long as the chaser is farther away than the minimum distance, move towards it at rate speed.
+        if (distance > 1.2f)
+            transform.position += transform.forward * speed * Time.deltaTime;
+    }
+
     private void FindNewTarget()
     {
         WaveManager.wm.GetRandomTarget();

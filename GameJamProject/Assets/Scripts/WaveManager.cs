@@ -55,7 +55,9 @@ public class WaveManager : MonoBehaviour
             GetRandomTarget();
             return gameManager.targets[currentTarget];
         }*/
-        return gameManager.targets[currentTarget];
+        if (gameManager.targets.Count > currentTarget && gameManager.targets[currentTarget] != null)
+            return gameManager.targets[currentTarget];
+        else return null;
     }
 
     /* private void GetRandomTarget(int index)

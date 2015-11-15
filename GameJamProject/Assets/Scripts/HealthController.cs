@@ -79,7 +79,12 @@ public class HealthController : MonoBehaviour {
         isDead = true;
         ApplyAnimations();
 
-        if(gameObject.GetComponent<NavMeshAgent>()){
+        if (gameObject.GetComponent<Chaser>())
+        {
+            gameObject.GetComponent<Chaser>().target = null;
+        }
+        if(gameObject.GetComponent<NavMeshAgent>() && gameObject.GetComponent<NavMeshAgent>().isOnNavMesh)
+        {
 			gameObject.GetComponent<NavMeshAgent>().Stop();
 			gameObject.GetComponent<Rigidbody>().velocity= new Vector3(0,0,0);
 		}

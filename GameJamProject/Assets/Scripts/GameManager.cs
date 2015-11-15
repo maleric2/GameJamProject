@@ -30,8 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverCanvas;
     public Text gameOverScoreDisplay;
 
-    public GameObject newWaveCanvas;
-    public Text newWaveTextDisplay;
+    public Text waveTextDisplay;
 
     [Tooltip("Only need to set if canBeatLevel is set to true.")]
     public GameObject beatLevelCanvas;
@@ -79,17 +78,20 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        killCount.text = "Kill Count\n <color=#" + ColorUtility.ToHtmlStringRGB(Color.blue) + ">HealBots:</color> " + healBotKillCount + "\n <color=#" + ColorUtility.ToHtmlStringRGB(Color.green) + ">FightBots:</color> " + fightBotKillCount;
+        killCount.text = "<color=#" + ColorUtility.ToHtmlStringRGB(new Color(0.87f, 0.541f, 0, 1)) + ">Kill Count</color>\n<color=#" + ColorUtility.ToHtmlStringRGB(Color.white) + ">HealBots:</color> " + healBotKillCount + "\n<color=#" + ColorUtility.ToHtmlStringRGB(Color.white) + ">FightBots:</color> " + fightBotKillCount;
 
         if (targets.Count == 0)
         {
             gameState = gameStates.GameOver;
         }
-
+        if (waveTextDisplay != null)
+        {
+            waveTextDisplay.text = (WaveManager.wm.currentWave).ToString();
+        }
         switch (gameState)
         {
             case gameStates.Playing:
-                newWaveCanvas.SetActive(false);
+                
                 if (!isAnyTarget())
                 {
                     // update gameState
@@ -119,8 +121,6 @@ public class GameManager : MonoBehaviour
 				}*/
                 break;
             case gameStates.WaitingWave:
-                Invoke("NewWaveCanvasActive", 0f);
-                newWaveTextDisplay.text = "Wave " + (WaveManager.wm.currentWave + 1) + " incoming";
                 break;
             case gameStates.Death:
                 if (backgroundMusic != null)
@@ -211,9 +211,5 @@ public class GameManager : MonoBehaviour
     public void TakeDownTarget()
     {
         //targetsAlive--;
-    }
-    private void NewWaveCanvasActive()
-    {
-        newWaveCanvas.SetActive(true);
     }
 }
