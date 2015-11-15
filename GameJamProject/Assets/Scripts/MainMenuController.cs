@@ -15,8 +15,12 @@ public class MainMenuController : MonoBehaviour {
 
     public void NewGame()
     {
-        Application.LoadLevel(1);
+		Invoke ("StartGame", 1.0f);       
     }
+
+	public void StartGame(){
+		Application.LoadLevel (1);
+	}
 
     public void RestartLevel()
     {
@@ -33,4 +37,9 @@ public class MainMenuController : MonoBehaviour {
     {
         Application.Quit();
     }
+
+	public void AudioStart(){
+		gameObject.GetComponent<AudioSource>().Play();
+
+	}
 }
