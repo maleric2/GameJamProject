@@ -124,7 +124,7 @@ public class Damage : MonoBehaviour
                     if (damageAmount > 0)
                         return;
                 }
-                if (this.tag.Equals(collision.gameObject.tag))
+                if (this.gameObject.layer.Equals(collision.gameObject.layer))
                     return;
 
                 if (Time.time - savedTime >= continuousTimeBetweenHits)
