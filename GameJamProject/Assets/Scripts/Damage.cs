@@ -70,6 +70,7 @@ public class Damage : MonoBehaviour
 
             if (this.tag.Equals(collision.gameObject.tag))
                 return;
+
             if (collision.gameObject.tag.Equals("Target"))
             {
                 if (damageAmount > 0)
@@ -123,6 +124,9 @@ public class Damage : MonoBehaviour
                     if (damageAmount > 0)
                         return;
                 }
+                if (this.tag.Equals(collision.gameObject.tag))
+                    return;
+
                 if (Time.time - savedTime >= continuousTimeBetweenHits)
                 {
                     ApplyAnimations(true);
