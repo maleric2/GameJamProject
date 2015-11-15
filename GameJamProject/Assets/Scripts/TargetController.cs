@@ -16,7 +16,7 @@ public class TargetController : MonoBehaviour {
 	void Update () {
 	    if(healthController.currentHealth >= 100.0f)
         {
-            healthCanvas.SetActive(false);
+            //healthCanvas.SetActive(false);
 
             foreach (Transform target in GameManager.gm.targets)
             {
