@@ -134,6 +134,12 @@ public class PlayerShooting : MonoBehaviour {
         {
             exhaustStatus -= exhaustDeceleration * Time.deltaTime;
             exhaustionSlider.value = exhaustStatus;
+
+            if (exhaustStatus <= 0.0f)
+            {
+                exhaustStatus = 0.0f;
+                isExhausted = false;
+            }
         }
     }
 
