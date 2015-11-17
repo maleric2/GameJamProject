@@ -148,9 +148,9 @@ public class GameManager : MonoBehaviour
                 break;
             case gameStates.GameOver:
                 gameOverCanvas.SetActive(true);
-                gameOverScoreDisplay.text = "Other computers infected: " + Mathf.Round(finalScore * Time.timeSinceLevelLoad);
+                gameOverScoreDisplay.text = "<color=#" + ColorUtility.ToHtmlStringRGB(new Color(0.87f, 0.541f, 0, 1)) + ">Bot Score: </color>" + Mathf.Round(finalScore * Time.timeSinceLevelLoad);
                 mainCanvas.GetComponent<TimerController>().enabled = false;
-                backgroundMusic.pitch = 0.2f;
+                backgroundMusic.pitch = 0.25f;
 
                 Time.timeScale = 0.0f;
                 break;

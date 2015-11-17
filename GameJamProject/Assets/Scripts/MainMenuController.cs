@@ -22,7 +22,7 @@ public class MainMenuController : MonoBehaviour {
 	}
     public void LoadMenu()
     {
-        //howToPlayCanvas.SetActive(false);
+        howToPlayCanvas.SetActive(false);
         creditsCanvas.SetActive(false);
         mainCanvas.SetActive(true);
     }
@@ -31,9 +31,15 @@ public class MainMenuController : MonoBehaviour {
         mainCanvas.SetActive(false);
         howToPlayCanvas.SetActive(true);
     }
+
+    public void ReturnToMenu()
+    {
+        Application.LoadLevel(0);
+    }
+
     public void RestartLevel()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        Application.LoadLevel(1);
     }
 
     public void Credits()

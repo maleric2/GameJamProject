@@ -111,8 +111,12 @@ public class HealthController : MonoBehaviour {
         {
             animator.SetBool("Dead", isDead);
 
-            if(gameObject.tag.Equals("Player"))
+            if (gameObject.tag.Equals("Player"))
+            {
+                gameObject.GetComponent<PlayerMovement>().enabled = false;
+                gameObject.GetComponent<PlayerShooting>().enabled = false;
                 Invoke("Death", 2.0f);
+            }
             else
                 Invoke("Death", 1.2f);
             //Invoke("Death", animator.GetCurrentAnimatorClipInfo(0)[0].clip.length+0.7f);
