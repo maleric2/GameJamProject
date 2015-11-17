@@ -3,9 +3,13 @@ using System.Collections;
 
 public class MainMenuController : MonoBehaviour {
 
+    public GameObject mainCanvas;
+    public GameObject creditsCanvas;
+    public GameObject howToPlayCanvas;
+
 	// Use this for initialization
 	void Start () {
-	
+        Time.timeScale = 1.0f;
 	}
 	
 	// Update is called once per frame
@@ -13,21 +17,19 @@ public class MainMenuController : MonoBehaviour {
 	
 	}
 
-    public void NewGame()
-    {
-		Invoke ("StartGame", 1.0f);       
-    }
-
 	public void StartGame(){
 		Application.LoadLevel (1);
 	}
     public void LoadMenu()
     {
-        Application.LoadLevel(0);
+        //howToPlayCanvas.SetActive(false);
+        creditsCanvas.SetActive(false);
+        mainCanvas.SetActive(true);
     }
     public void HowToPlay()
     {
-        Application.LoadLevel(2);
+        mainCanvas.SetActive(false);
+        howToPlayCanvas.SetActive(true);
     }
     public void RestartLevel()
     {
@@ -36,16 +38,12 @@ public class MainMenuController : MonoBehaviour {
 
     public void Credits()
     {
-        Application.LoadLevel(3);
+        mainCanvas.SetActive(false);
+        creditsCanvas.SetActive(true);
     }
 
     public void Exit()
     {
         Application.Quit();
     }
-
-	public void AudioStart(){
-		gameObject.GetComponent<AudioSource>().Play();
-
-	}
 }
