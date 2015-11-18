@@ -10,8 +10,14 @@ public class AudioListenerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         audioMuteToggle.isOn = !AudioManager.instance.isAudioEnabled;
-        audioListener.enabled = !audioMuteToggle.isOn;
-        AudioManager.instance.isAudioEnabled = audioListener.enabled;
+
+        if (audioMuteToggle.isOn)
+            AudioListener.volume = 0.0f;
+        else
+            AudioListener.volume = 1.0f;
+
+       
+        AudioManager.instance.isAudioEnabled = !audioMuteToggle.isOn;
 	}
 	
 	// Update is called once per frame
@@ -21,7 +27,11 @@ public class AudioListenerController : MonoBehaviour {
 
     public void ChangeAudioState()
     {
-        audioListener.enabled = !AudioManager.instance.isAudioEnabled;
+        if (audioMuteToggle.isOn)
+            AudioListener.volume = 0.0f;
+        else
+            AudioListener.volume = 1.0f;
+
         AudioManager.instance.isAudioEnabled = !AudioManager.instance.isAudioEnabled;
     }
 }
